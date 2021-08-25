@@ -1,0 +1,15 @@
+#java build in response to problems with previous lang
+#billions of devices run on java
+#android uses some variation of java
+#C sharp is microsofts lang
+#C sharp doesn't work great with linux
+#== DOES NOT EQUAL .equals
+#Integer is not equal to int
+#Jython: allows for movement across java and python
+#compiling python code for java vm
+##compilation##
+#major difference of java is writing the code to a vm
+#basic -> C code -> modernish languages like C sharp and java
+#compiling text file instructions to binary was big revolution in comp sci
+#.class file is pseudo binary which is converted by interpreter
+#
