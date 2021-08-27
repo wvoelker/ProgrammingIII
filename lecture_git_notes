@@ -8,4 +8,13 @@
 #in c, memory had to be manually allocated (got rid of by garbage collection, which removes objects from memory automatically when you are done)
 #garbage collection is very important to modern programming (but this means that there is no control of memory allocation)
 ######################################################################
-#
+##actual git notes here##
+#this isn't going to include branching
+#creating a repository
+#can be done through website
+#once a repository is made, it can be viewed as webpage on git
+#git clone command with url will copy repository to local directory
+#from working directory, file or changes are staged then committed then pushed into git
+#git checkout command? jumps between different branches
+#git status - gives status of added files
+
