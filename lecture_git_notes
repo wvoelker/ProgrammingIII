@@ -16,5 +16,11 @@
 #git clone command with url will copy repository to local directory
 #from working directory, file or changes are staged then committed then pushed into git
 #git checkout command? jumps between different branches
-#git status - gives status of added files
-
+#git status - gives status of files in repository
+#git remote gives list of remote repositories
+#git push origin main(or master) == git push remote repository name + repository branch
+#git log gives you history of repository
+#git diff does something but im not really sure
+#git fetch - grabs latest commits from remote database
+#git merge tries to merge commits
+#
