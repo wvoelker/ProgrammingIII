@@ -1,2 +1,11 @@
 //NOTES FOR LECTURE 3: GIT
+##some more overview of lecture 1
+#brief description of data types in object oriented programming
+#encapsulation is in java but not in python
+#java has classes
+#data of a class in memory is a object (a realized class)
+#all objects in java are on heap (in c data goes on stack not heap)
+#in c, memory had to be manually allocated (got rid of by garbage collection, which removes objects from memory automatically when you are done)
+#garbage collection is very important to modern programming (but this means that there is no control of memory allocation)
+######################################################################
 #
