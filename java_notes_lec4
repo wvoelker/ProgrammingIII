@@ -1,0 +1,9 @@
+//NOTES ON JAVA LECTURE 4//
+#if,switch,=,==, precedence and loops
+#package; public class {public static void main(String[] args){}
+#declaring variable = name of variable x=4
+#int = 32 bit integer
+#if (conditional) (result bracketed 1 line under)
+#whitespace in java is irrelevant
+#end of conditionals seem to include semicolon??
+#
