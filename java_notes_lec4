@@ -6,4 +6,7 @@
 #if (conditional) (result bracketed 1 line under)
 #whitespace in java is irrelevant
 #end of conditionals seem to include semicolon??
-#
+####################
+#|| is or boolean
+#&& is and boolean
+#i think semicolon indicates line end
