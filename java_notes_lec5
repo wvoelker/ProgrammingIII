@@ -1,0 +1,10 @@
+//Programming notes, actual java code now//
+#import java.util.RANDOM; get random class
+#Random random = new Random() #this is the random generator
+#take numbers out of it by random.nextInt()
+#write code to print the console 1,000 randomly generated DNA 3 mers
+#have code track how ofter it prints out the 3 mer AAA
+#modify code frequencies (check lecture on website)
+#check expected frequency 
+#float f = random.nextFloat()
+
