@@ -1,6 +1,6 @@
 //Random Sequence Generator
 //WILLIAM VOELKER
-package git_programmingIII;
+package ASSIGNMENT1_SUBMISSION;
 
 import java.util.Random;
 
