@@ -7,4 +7,18 @@
 #modify code frequencies (check lecture on website)
 #check expected frequency 
 #float f = random.nextFloat()
-
+##########################################
+#actual notes
+#different data types will not always be ==, but they can be, generally try to keep data types the same i think
+#rounding errors can occur over large or small numbers because of the limit to the number of bits
+#== does not work well on strings
+#can be bypassed with inString.equals(s1)
+#System.out.println() to print
+#minimize scope of local variables!!!
+#for loop structure for(initialization;condition;action){another action}
+#unreachable code is a compile error
+#nested for loops are necessary
+#think about performance!! N^2 bubble sort sucks
+#arrays.sort is better, merge.sort is better
+#look up locking specific git folders in repository? would make things much easier
+#
