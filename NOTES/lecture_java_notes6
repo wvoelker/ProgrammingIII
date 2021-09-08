@@ -1,0 +1,45 @@
+//NOTES FOR LECTURE 6 JAVA//
+#assignment for this week will be to make a quizzer for amino acids##
+##THIS IS TECHNICALLY LECTURE 4##
+
+#for hw from now on we will be following java style
+###################################################
+#RULES FOR JAVA STYLE#
+#packages start with lowercase
+#classes start with Uppercase
+#methods start with lowercase
+#Constants are ALL uppercase
+#variable names are lowercase
+###########################
+##JAVA PRIMITIVE TYPES
+#byte - 8 bit number
+#short - 16 bit number
+#integer - 32 bit number
+#long - 64 bit number
+#float - 32 bit float
+#double - 64 bit float
+#boolean - T/F
+#char - characters
+############################
+#BigDecimal is a class alternative to the double and float types
+#pass strings instead of numbers for precision with Bigdecimal
+#casting - java will automatically cast form less info to more
+#byte<short<char<int<long<float<double
+#long to float can lose info (float is lower bits but includes other chars)
+#casting is (float)integer or whatever
+#you have to cast right to left, otherwise you can just declare
+#even without info loss you need to cast
+################################################################
+#going left to right, java casts for you
+#this can lead to errors
+#########################################
+#arrays are declared with []
+#int x[] = new int[10];
+#or intx[] = {0,10,2,34,8}
+#size of arrays cannot be changed
+#multidimensional arrays: arrays of arrays
+###################
+#METHODS#
+#public class x
+#public x (declarations) #THIS IS CONSTRUCTOR
+
