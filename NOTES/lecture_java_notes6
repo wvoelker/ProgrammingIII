@@ -42,4 +42,6 @@
 #METHODS#
 #public class x
 #public x (declarations) #THIS IS CONSTRUCTOR
-
+#public void foobar(parameters)
+#put method outside of main, but call the method in main
+#

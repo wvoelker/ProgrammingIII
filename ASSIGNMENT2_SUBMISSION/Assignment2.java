@@ -7,7 +7,15 @@ import java.time.ZonedDateTime;
 
 public class Assignment2
 {
-        public static void main(String[] args)
+        public static void lister(String[] listee)
+	{
+		for (int x = 0; x < 20; x++)
+		{
+			System.out.println(listee[x]);
+		}
+
+	}
+	public static void main(String[] args)
         {
 		String[] SHORT_NAMES =
 		{ "A","R", "N", "D", "C", "Q", "E",
@@ -23,9 +31,12 @@ public class Assignment2
 		"phenylalanine", "proline",
 		"serine","threonine","tryptophan",
 		"tyrosine", "valine"};
+
+		lister(SHORT_NAMES);
+
 	}
 }
 
-public class quiz
-{
+
+
 
