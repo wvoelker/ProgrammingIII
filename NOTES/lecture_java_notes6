@@ -44,4 +44,10 @@
 #public x (declarations) #THIS IS CONSTRUCTOR
 #public void foobar(parameters)
 #put method outside of main, but call the method in main
+############################
+#BUBBLE SORT ALGORITHM#
+#compares current number and previous number and if the second number is lower, swap them
+#does this for every number compared to every other number (a1,a2,a3,b1,b2,b3)
+#performance is N^2
+#O notation is measure of performance
 #
