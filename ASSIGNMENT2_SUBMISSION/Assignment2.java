@@ -33,7 +33,11 @@ public class Assignment2
 		{
 			return true;
 		}
-		else{return false;}
+		else
+		{
+			System.out.println("WAS EXPECTING " + answers[x] + ".");
+			return false;
+		}
 	}
 	public static void quiz(String[] full,String[] answers)
 	{
