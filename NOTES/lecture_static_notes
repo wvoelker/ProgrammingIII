@@ -1,0 +1,11 @@
+#lecture about static
+####################
+#static methods and data are instance bound
+#this means that it applies to the class but not the objects of the class
+#statics vs non statics are hard to understand
+#all instances of the class will share the static data
+#changing static data for one instance of class will change for all instances of class
+#non static variables are associated with objects, but static variables are associated with classes
+#can access with object name or class name
+#classname.staticfloat() or object1.staticfloat()
+#
