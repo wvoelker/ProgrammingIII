@@ -1,0 +1,34 @@
+#java notes
+###########
+#a circle class in detail
+#####
+#classes bring together data and methods that operate on that data
+#is a vs has a
+#is a circle, has a radius
+#is a square, has a side length
+#is a rectangle, has 2 side lengths
+#inheritance, (superclasses)
+#is a shape in addition to a circle
+###################################
+#public Circle = constructor #public, name of class
+#UML is way of drawing object oriented (look this up boss)
+#public Circle (double radium){this.radius = radius} #this is a constructor, name of constructor has to be name of class
+#things that are 'overwritten' are actually stored in memory and marked for garbage collection
+#final data = initialized once, no more no less
+#if a final parameter in a class is not declared, there will be a compile error
+#immutable objects are faster to work with and is inherently thread safe
+#private data/methods can only be accessed within class
+#public data/methods can be accessed from anywhere
+#put as much as you can immutable and private!
+#public classes can be accessed from other packages
+#math.exp for exponentially big or small numbers
+#####################################################
+#4 levels of access in java
+#public, private, default, protected
+#default can only be accessed by package
+#protected can only be accessed by subclasses
+#minimize the scope of all variables = encapsulation
+#getter methods are very common in many classes in java
+#favor immutable objects when possible
+#within classes, this = class (this.radius)
+
