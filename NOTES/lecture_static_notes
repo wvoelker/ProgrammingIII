@@ -10,4 +10,25 @@
 #classname.staticfloat() or object1.staticfloat()
 #############################
 #raise excpetions with command throw new Exception("error message")
+###############################
+#static methods cannot access instance variables
+#there is a static constructor for initializing static variables
+#java.lang.Math is a collection of static values and methods
+#factory method: produces an object from within an object
+#static factory method is alternative to constructor statement
+#learn static factory methods, these notes are slim
+######################################
+#string notes
+##########
+#java strings are immutable
+#immutability of strings has serious performance problems
+#string concat is really inefficient (avoid if possible)
+#arrays are faster? you can store string chars in array and print the array that way
+#all data in R is immutable
+#immutable data slow down performance (overwrite and garbage collection)
+#StringBuffer is 20 times faster than strings
+#a buffer is a mutable string
+#StringBuffer buff = new StringBuffer();
+#buff.append(x)
+#thats better than string concat
 
