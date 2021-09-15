@@ -8,4 +8,6 @@
 #non static variables are associated with objects, but static variables are associated with classes
 #can access with object name or class name
 #classname.staticfloat() or object1.staticfloat()
-#
+#############################
+#raise excpetions with command throw new Exception("error message")
+
