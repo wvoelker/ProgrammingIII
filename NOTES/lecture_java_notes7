@@ -31,4 +31,13 @@
 #getter methods are very common in many classes in java
 #favor immutable objects when possible
 #within classes, this = class (this.radius)
+#BufferedReader class is for reading files
+#BufferedReader reader = new BufferedReader(new FileReader(new File('filepath')))
+#reader.readLine()
+#reader.close()
+#BufferedWriter class is for writing files
+#writer.write("string")
+#writer.flush()
+#optimize judiciously; do not over optimize
+##########################################
 

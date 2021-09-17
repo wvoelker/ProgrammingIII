@@ -1,0 +1,22 @@
+#lists and arrays lecture
+#######################
+#collections api (data structures i think?)
+#strings and arrays in java are seperate
+#iteration in arrays
+#for(String string: anArrayofSomething){do something}
+#strings and arrays are not interchangable(you can't index strings)
+#Arrays.sort(somearray) sorts any array of anything (different sort criteria for different data types)
+#Arrays.binarysearch(somearray,query) will print out the index
+#lists (unlike arrays) can change size
+#arrays are a fixed size
+#lots of methods that can be called on lists 
+#an array is an implementation of the list interface
+#######################################
+#INTERFACES
+#an interface is just a collection of function names
+#interface is added through 'implements' commmand
+#class circle implements shape
+#class square implements shape
+#stops compilation if methods in shape interface are not in either class
+#this allows you to define collection api (list or array) to contain shapes instead of either object
+
