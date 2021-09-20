@@ -19,4 +19,15 @@
 #class square implements shape
 #stops compilation if methods in shape interface are not in either class
 #this allows you to define collection api (list or array) to contain shapes instead of either object
-
+###################################################
+#NEXT DAY
+#interfaces are basically just notes to the compiler
+#List<Shape> list
+#ensureCapacity = ensures that a list can contain a certain size 
+#LinkedLists can change size (dont use ensure capacity on these)
+#LinkedLists hold the data in a different way, cannot index a LinkedList
+#LinkedList is like a parser object thingy
+#you can insert anywhere in a LinkedList pretty easily
+#adding elements to beginning of an ArrayList is slow
+#get() command in LinkedList is much slower than get() in ArrayList
+#
