@@ -30,4 +30,12 @@
 #you can insert anywhere in a LinkedList pretty easily
 #adding elements to beginning of an ArrayList is slow
 #get() command in LinkedList is much slower than get() in ArrayList
-#
+#refer to objects by their interfaces
+#####################################
+#using interfaces to sort lists
+#Arrays.sort(array)
+#Collections.sort(list) will sort list instead of array
+#comparable is an interface
+#comparable has compareTo function
+#have to define compareTo() in order to sort interface lists
+#Comparator<Shape> defines the compare function
