@@ -1,0 +1,23 @@
+#lecture with inheritance
+#############################
+#extends is key word for inheritance
+#Circle extends shape
+#public abstract class Shape
+#same as interface basically
+#class can have multiple interfaces, but cannot extend multiple classes
+#abstract class can bestow functions, interface can only list function names
+################################
+#objects
+#class Object is the root of the class heirarchy
+#all Objects have certain methods available
+#Object method: wait,notify,notifyAll = multithreaded
+#Object method: equals,hashCode,toString
+#toString returns a string representation of this object
+#Objects are automatically cast toString from system.out.println
+#considered good form to override toString
+#java overrides with the lowest implementation of an object (you can override in the more derrived class)
+#subclasses override superclasses
+#@Override is a comment to compiler; if this method does not override, don't compile
+#super keyword invokes the method from superclass
+#super class can keep going up
+##############################################
