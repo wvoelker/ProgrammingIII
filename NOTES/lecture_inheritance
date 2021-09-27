@@ -21,3 +21,6 @@
 #super keyword invokes the method from superclass
 #super class can keep going up
 ##############################################
+#favor composition over inheritance
+#can lead to fragile software if used wrong
+############################################
