@@ -1,0 +1,23 @@
+#notes on HashSets, Hashcode, and Iterators
+############################################
+#sets are alternative collection to list
+#Set is not ordered (like list)
+#sets cannot have duplicates
+#SortedSet is set with order
+#sets don't have indexes
+#collection interface contains lists and sets
+#Bloch says that you should work at highest level of abstraction you can (to keep flexibility in code)
+###########################################
+#you can use sets to remove duplicates from list easily
+##############################
+#equals() and hashCode()
+#hash function turns data into ones and zeros (an address to a bucket)
+#you can jump to any bucket with address (don't have to iterate)
+#hash function works in constant time
+#hashCode() is a function in java that applies to object interface
+#so all objects have a hashCode()
+#only rule for hashcode function is that same thing must return same hashcode
+#Sneakers - movie about reverse hashcodes - watch this later
+#can take any number of bits as the bucket address
+####################################3
+#
