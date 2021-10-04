@@ -20,4 +20,15 @@
 #Sneakers - movie about reverse hashcodes - watch this later
 #can take any number of bits as the bucket address
 ####################################3
-#
+#HashSet<something> set = new Hashset<something>();
+#obey general contract when overriding equals function
+##reflexive, symmetric, transitive, consistent, x.equals(null) should always be false
+#in order to ensure that two objects that are equal in hashmaps you must override the hashCode() function
+#ALWAYS override hashcode if overriding equals()
+#never introduce indeterminism in programs without random factors
+#Double(value).hashCode(); will override hashcode with better function
+#hashCode function should be determined using same values that equals is used
+#dont modify collections when iterating through collection
+#Hashset/Hashmap is fastest collection api
+#TreeSet is a slower set, but ordered by comparator 
+
