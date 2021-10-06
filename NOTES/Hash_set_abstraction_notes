@@ -31,4 +31,21 @@
 #dont modify collections when iterating through collection
 #Hashset/Hashmap is fastest collection api
 #TreeSet is a slower set, but ordered by comparator 
-
+######################################
+#lecture 11 - Hash maps
+##################
+#maps have a key and value - like dictionaries!
+#Hail Mary Project - read this book!
+#maps are very literally just dictionaries
+#map.get(key) = value
+#Treemap will keep it in order if you want an ordered dictionary
+#maps only hold objects(not primitives)
+#maps are good for counting things
+#linkedhashmap is order of iteration
+#############################
+#finally garuntees that a block of code will execute (if,else,finally)
+#Jframe is java gui object
+#MyFrame extends Jframe
+#java.swing.Jframe
+#BorderLayout class: 5 zones
+##############################
