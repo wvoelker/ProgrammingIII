@@ -48,4 +48,7 @@
 #MyFrame extends Jframe
 #java.swing.Jframe
 #BorderLayout class: 5 zones
+#layout manager objects tells java how compenents should be layed out in space
+#sun tutorial for gui mockups
+#add ActionListener interface to respond to user inputs
 ##############################
