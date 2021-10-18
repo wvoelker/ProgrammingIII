@@ -1,0 +1,11 @@
+#notes for threads and how to use
+###################################3
+#class called thread in java
+#extends Thread
+#@Override run method in thread to tell thread what to do
+#all threads have thread ID which is final
+##################################
+#when multithreading, final is essential (threads cause problems by trying to modify stuff without permission)
+#run does not throw an exception
+#so try-catch might be important
+#
