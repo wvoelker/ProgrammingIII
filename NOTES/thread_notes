@@ -8,4 +8,13 @@
 #when multithreading, final is essential (threads cause problems by trying to modify stuff without permission)
 #run does not throw an exception
 #so try-catch might be important
+#the semaphore class makes code run in parallel
+#each worker has own number and reference to semaphore
+#private final Semaphore semaphore;
+#always release semaphore in finally block to release 'pass'
+#semaphore.release()
+#worker implements runnable
+#x.aquire() to get license
+#x.release() to give it back
+#do not allow threads to access data at same time
 #
