@@ -17,4 +17,16 @@
 #x.aquire() to get license
 #x.release() to give it back
 #do not allow threads to access data at same time
-#
+#####################################3
+#parsing fastas in parallel
+#volatile keyword means all threads have visibility of method or variable
+#split file into multiple files
+#parse each file with seperate worker
+#############################333
+#threads in gui's
+#awt thread ActionListener implementation
+#the awt thread is what updates the gui, so don't put it on loops i guess
+#make action listener do quick stuff (add in new thread to handle slow tasks to prevent awt thread from freezing)
+#most swing methods are not thread safe, so keep them on the awt thread
+#only threadsafe methods can be called from external threads
+#(enabling and disabling buttons should be done on other threads)
