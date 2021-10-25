@@ -1,6 +1,4 @@
-import java.io.*;
-import java.util.*;
-
+import java.io.*; import java.util.*;
 /**
  * Reads VCF file and returns a hashmap of lists
  * key is ID from vcf record

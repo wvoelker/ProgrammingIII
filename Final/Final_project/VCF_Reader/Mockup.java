@@ -4,90 +4,125 @@ import java.awt.*;
 import javax.swing.*;  
      
 public class Mockup extends JFrame
-{
-    private JButton centButton = new JButton("center");
+{   
+    private JButton filterButton = new JButton("Filter"); //This button would trigger filter menu
+    private JButton exportButton = new JButton("Export");//This button would allow you to export filtered/modified vcf files or plots (depending on what is visible)
     
-    private JButton uploadButton = new JButton("upload vcf file");
-    private JButton newuploadButton = new JButton("upload vcf file");
-    private JButton auploadButton = new JButton("upload vcf file");
-    
-    private JButton aButton = new JButton("upload a vcf file");
-    private JButton bButton = new JButton("upload no vcf file");
-    private JButton cButton = new JButton("upload some vcf file");
-    
-    private JButton z = new JButton("z");
-    private JButton x = new JButton("x");
-    private JButton c = new JButton("c");
-    private JButton v = new JButton("v");
-    private JButton b = new JButton("b");
-    private JButton n = new JButton("n");
-    private JButton m = new JButton("m");
-    private JButton l = new JButton("l");
-    private JButton k = new JButton("k");
+    private JButton z = new JButton("vcfdock"); //Here would be current vcf files being viewed
+    private JButton x = new JButton("meta/stats/plot");
+    private JButton c = new JButton("meta/stats/plot");
+    private JButton v = new JButton("filters"); //Here would be any filters currently being applied to vcf files 
+    private JButton b = new JButton("meta/stats/plot");
+    private JButton n = new JButton("meta/stats/plot");
     
     public Mockup(String title)
     {
         super(title);
         setSize(1000,800);
         setLocationRelativeTo(null);
-        setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         getContentPane().setLayout(new BorderLayout());
         getContentPane().add(getCenterPanel(),BorderLayout.CENTER);
-        getContentPane().add(getBottomPanel(),BorderLayout.SOUTH);
-        getContentPane().add(getTopPanel(),BorderLayout.NORTH);
+        getContentPane().add(getWestPanel(),BorderLayout.WEST);
+        setJMenuBar(getMyMenuBar());
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
     }
-    
-    public static void main(String[] args) 
-    {
-        new Mockup("VCF_READER");
-    }
-    
-    private class ActionAgent implements ActionListener
-    {
-        public void actionPerformed(ActionEvent arg0)
-        {
-            int x = 0;
-        }
-    }
-    
-    private JPanel getBottomPanel()
-    {
-    	JPanel panel = new JPanel();
-	
-	panel.setLayout(new GridLayout(0,3));
-	panel.add(uploadButton);
-	panel.add(newuploadButton);
-	panel.add(auploadButton);
-	return panel;
-    }
-    
-    private JPanel getTopPanel()
-    {
-    	JPanel panel = new JPanel();
-	
-	panel.setLayout(new GridLayout(0,3));
-	panel.add(aButton);
-	panel.add(bButton);
-	panel.add(cButton);
-	return panel;
-    }
-    
+
     private JPanel getCenterPanel()
     {
-    	JPanel panel = new JPanel();
-	
-	panel.setLayout(new GridLayout(3,3));
-	panel.add(z);
+	JPanel panel = new JPanel();
+	    
+	panel.setLayout(new GridLayout(2,2));
 	panel.add(x);
 	panel.add(c);
-	panel.add(v);
 	panel.add(b);
 	panel.add(n);
-	panel.add(m);
-	panel.add(l);
-	panel.add(k);
-
 	return panel;
     }
+    
+    private JPanel getWestPanel()
+    {
+      JPanel panel = new JPanel();
+        
+      panel.setLayout(new GridLayout(2,0));
+      panel.add(z);
+      panel.add(v);
+      return panel;
+    }
+    
+    private JMenuBar getMyMenuBar()
+    {
+      JMenuBar jmenuBar = new JMenuBar();
+    	JMenu fileMenu = new JMenu("Menu");
+    	fileMenu.setMnemonic('M');
+    	//VIEW SUBMENU COMPONENTS
+    	JMenuItem Meta = new JMenuItem("Meta Data");
+    	JMenuItem Stats = new JMenuItem("VCF Statistics");
+    	JMenuItem Plot = new JMenuItem("Plot");
+      //EXPORT SUBMENU COMPONENTS
+      JMenuItem Metax = new JMenuItem("Meta Data");
+    	JMenuItem Statsx = new JMenuItem("VCF Statistics");
+    	JMenuItem Plotx = new JMenuItem("Plot");
+      JMenuItem VCFx = new JMenuItem("Filtered VCF");
+    	//SUBMENU FOR EXPORTS
+      JMenu subMenux = new JMenu("Export");
+      fileMenu.add(subMenux);
+      subMenux.add(Metax);
+      subMenux.add(Statsx);
+      subMenux.add(Plotx);
+      subMenux.add(VCFx);
+      //ADD MENU
+    	jmenuBar.add(fileMenu);
+    	//SUBMENU FOR VIEWING
+    	JMenu subMenu = new JMenu("View");
+    	fileMenu.add(subMenu);
+    	subMenu.add(Meta);//DISPLAY META DATA OF CURRENT VCF
+    	subMenu.add(Stats); //DISPLAY STATISTICS ON CURRENT VCF
+    	subMenu.add(Plot); //SWITCH TO PLOT BUILDING LAYOUT
+      //IMPORT FUNCTION TO READ VCF FILE
+    	JMenuItem ImportVCF = new JMenuItem("Import VCF");
+    	ImportVCF.setMnemonic('I');
+    	fileMenu.add(ImportVCF);
+    	//IMPORT VCF ACTION LISTENER
+    	ImportVCF.addActionListener(new ActionListener()
+    	{
+    		public void actionPerformed(ActionEvent e)
+    		{
+    			int x = 0; //placeholder for import and read vcf function
+    		}
+    	});
+    	//Meta Action Listener
+    	Meta.addActionListener(new ActionListener()
+    	{
+    		public void actionPerformed(ActionEvent e)
+    		{
+        			int x = 0;//placeholder for rearranging the screen to show metadata
+    		}
+    	});
+    	//Stats Action Listener
+    	Stats.addActionListener(new ActionListener()
+    	{
+    		public void actionPerformed(ActionEvent e)
+    		{
+    			int x = 0;//placeholder for rearranging screen to show statistics on vcf
+    		}
+    	});
+    	//Plot Action Listener
+    	Plot.addActionListener(new ActionListener()
+    	{
+    		public void actionPerformed(ActionEvent e)
+    		{
+    			int x = 0;//placeholder for rearranging the screen to show plots
+    		}
+    	});
+    	return jmenuBar;
+    }
+        
+    public static void main(String[] args) 
+        {
+            new Mockup("VCF_READER");
+        }
+    
 }
+        
