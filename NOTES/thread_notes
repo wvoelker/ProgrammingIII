@@ -30,3 +30,14 @@
 #most swing methods are not thread safe, so keep them on the awt thread
 #only threadsafe methods can be called from external threads
 #(enabling and disabling buttons should be done on other threads)
+#######################################
+#stateless objects are thread safe
+#be careful with checks and acts with multiple threads
+#need to prevent other threads from acting when operations are running
+#atomic operations - indivisible
+#Atomic data structures - makes sure other threads can't interrupt
+#####################################################3
+#synchronization is necessary to share variables
+#immutable data will always be visible by all threads
+#synchronized data will always be visible (and anything within a synchronization lock)
+#
