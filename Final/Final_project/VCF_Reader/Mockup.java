@@ -29,27 +29,27 @@ public class Mockup extends JFrame
 
     }
 
-    private JPanel getCenterPanel()
-    {
-	JPanel panel = new JPanel();
-	    
-	panel.setLayout(new GridLayout(2,2));
-	panel.add(x);
-	panel.add(c);
-	panel.add(b);
-	panel.add(n);
-	return panel;
-    }
+   private JPanel getCenterPanel()
+   {
+   	JPanel panel = new JPanel();
+   	    
+   	panel.setLayout(new GridLayout(2,2));
+   	panel.add(x);
+   	panel.add(c);
+   	panel.add(b);
+   	panel.add(n);
+   	return panel;
+   }
     
-    private JPanel getWestPanel()
-    {
+   private JPanel getWestPanel()
+   {
       JPanel panel = new JPanel();
         
       panel.setLayout(new GridLayout(2,0));
       panel.add(z);
       panel.add(v);
       return panel;
-    }
+   }
     
     private JMenuBar getMyMenuBar()
     {
