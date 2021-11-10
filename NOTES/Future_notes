@@ -1,0 +1,10 @@
+#future holds results of a calculation
+#future is interface
+#FutureTask is implementation
+#cancel flag in future task object can cancel process(task)
+#########################3
+#must check for cancellation in thread class to actually cancel thread
+#otherwise it is uncancellable
+###########################3
+#Deadlock
+#don't access locks in inverse (this makes sense jsut read the powerpoint)
