@@ -16,6 +16,7 @@ public class Mockup extends JFrame
     private JButton v = new JButton("filters"); //Here would be any filters currently being applied to vcf files 
     private JButton b = new JButton("meta/stats/plot");
     private JButton n = new JButton("meta/stats/plot");
+    private String meta = new String();
     private JFileChooser fileChooser = new JFileChooser();
     
     public Mockup(String title)
@@ -95,7 +96,7 @@ public class Mockup extends JFrame
     		   int returnVal = fileChooser.showOpenDialog(Mockup.this);
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                File file = fileChooser.getSelectedFile();
-               vcf_read(file);}
+               vcf_read(file);} //make worker to read in vcf file instead of awt thread
     		}
     	});
     	//Meta Action Listener
@@ -126,25 +127,36 @@ public class Mockup extends JFrame
     }
     public void vcf_read(File file)
     {
-      try{
-         BufferedReader reader = new BufferedReader(new FileReader(file));
-         String line = new String();
-   		int increment = 0;
-         while(line != null)
-   		   {
-               line = reader.readLine();
-               System.out.println(line);
+         try{
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line = new String();
+      		int increment = 0;
+            while(line != null)
+      		   {
+                  line = reader.readLine();
+                  try{
+                     if(line!=null&&Character.valueOf(line.charAt(0)).equals('#'))
+                        {
+                           meta = meta + line + '\n';
+                           System.out.println("THERE IS META" + meta);
+                        }
+                      }
+                  catch(StringIndexOutOfBoundsException ex)
+                     {
+                        break;
+                     }
+                  System.out.println(line);
+               }
+            reader.close();
             }
-         reader.close();
+         catch(FileNotFoundException ex)
+         {
+            System.out.println("ERROR: file not found");
          }
-      catch(FileNotFoundException ex)
-      {
-         System.out.println("ERROR");
-      }
-      catch(IOException ex)
-      {
-         System.out.println("ERROR");
-      }
+         catch(IOException ex)
+         {
+            System.out.println("ERROR: IOException");
+         }
     }
         
     public static void main(String[] args)
