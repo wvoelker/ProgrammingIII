@@ -1,7 +1,9 @@
 package VCF_Reader;
 import java.awt.event.*;
 import java.awt.*;
-import javax.swing.*;  
+import javax.swing.*;
+import java.lang.*; 
+import java.io.*;
      
 public class Mockup extends JFrame
 {   
@@ -14,6 +16,7 @@ public class Mockup extends JFrame
     private JButton v = new JButton("filters"); //Here would be any filters currently being applied to vcf files 
     private JButton b = new JButton("meta/stats/plot");
     private JButton n = new JButton("meta/stats/plot");
+    private JFileChooser fileChooser = new JFileChooser();
     
     public Mockup(String title)
     {
@@ -89,7 +92,10 @@ public class Mockup extends JFrame
     	{
     		public void actionPerformed(ActionEvent e)
     		{
-    			int x = 0; //placeholder for import and read vcf function
+    		   int returnVal = fileChooser.showOpenDialog(Mockup.this);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+               File file = fileChooser.getSelectedFile();
+               vcf_read(file);}
     		}
     	});
     	//Meta Action Listener
@@ -118,8 +124,30 @@ public class Mockup extends JFrame
     	});
     	return jmenuBar;
     }
+    public void vcf_read(File file)
+    {
+      try{
+         BufferedReader reader = new BufferedReader(new FileReader(file));
+         String line = new String();
+   		int increment = 0;
+         while(line != null)
+   		   {
+               line = reader.readLine();
+               System.out.println(line);
+            }
+         reader.close();
+         }
+      catch(FileNotFoundException ex)
+      {
+         System.out.println("ERROR");
+      }
+      catch(IOException ex)
+      {
+         System.out.println("ERROR");
+      }
+    }
         
-    public static void main(String[] args) 
+    public static void main(String[] args)
         {
             new Mockup("VCF_READER");
         }
