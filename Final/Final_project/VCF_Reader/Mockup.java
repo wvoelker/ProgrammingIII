@@ -4,6 +4,8 @@ import java.awt.*;
 import javax.swing.*;
 import java.lang.*; 
 import java.io.*;
+import java.util.*;
+
      
 public class Mockup extends JFrame
 {   
@@ -16,7 +18,13 @@ public class Mockup extends JFrame
     private JButton v = new JButton("filters"); //Here would be any filters currently being applied to vcf files 
     private JButton b = new JButton("meta/stats/plot");
     private JButton n = new JButton("meta/stats/plot");
+    private int file_number = 0;
+    private DefaultListModel Entries = new DefaultListModel();
+    private JList EntryDock = new JList(Entries);
     private String meta = new String();
+    private ArrayList<String> meta_list = new ArrayList<>();
+    private ArrayList<ArrayList> record_list = new ArrayList<>();
+    private ArrayList<String> vcf_records = new ArrayList<>();
     private JFileChooser fileChooser = new JFileChooser();
     
     public Mockup(String title)
@@ -29,6 +37,7 @@ public class Mockup extends JFrame
         getContentPane().add(getWestPanel(),BorderLayout.WEST);
         setJMenuBar(getMyMenuBar());
         setVisible(true);
+        EntryDock.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
     }
@@ -48,10 +57,25 @@ public class Mockup extends JFrame
    private JPanel getWestPanel()
    {
       JPanel panel = new JPanel();
-        
-      panel.setLayout(new GridLayout(2,0));
-      panel.add(z);
-      panel.add(v);
+      panel.add(EntryDock);
+      EntryDock.addListSelectionListener(new ListSelectionListener()
+         {
+            public void valueChanged(ListSelectionEvent e)
+               {
+                  if (EntryDock.getSelectedIndex() == -1) 
+                        {
+                           meta = "";
+                           vcf_records.clear();
+                        } 
+                        else 
+                        {
+                           int index = EntryDock.getSelectedIndex();
+                           meta = meta_list.get(index);
+                           vcf_records = record_list.get(index);
+                        }
+               }
+         });
+      
       return panel;
    }
     
@@ -93,10 +117,8 @@ public class Mockup extends JFrame
     	{
     		public void actionPerformed(ActionEvent e)
     		{
-    		   int returnVal = fileChooser.showOpenDialog(Mockup.this);
-            if (returnVal == JFileChooser.APPROVE_OPTION) {
-               File file = fileChooser.getSelectedFile();
-               vcf_read(file);} //make worker to read in vcf file instead of awt thread
+    		   read_worker ReadWorker = new read_worker(1);
+            ReadWorker.start();//make worker to read in vcf file instead of awt thread
     		}
     	});
     	//Meta Action Listener
@@ -104,7 +126,8 @@ public class Mockup extends JFrame
     	{
     		public void actionPerformed(ActionEvent e)
     		{
-        			int x = 0;//placeholder for rearranging the screen to show metadata
+            meta_worker MetaWorker = new meta_worker(1);
+            MetaWorker.start();
     		}
     	});
     	//Stats Action Listener
@@ -112,7 +135,10 @@ public class Mockup extends JFrame
     	{
     		public void actionPerformed(ActionEvent e)
     		{
-    			int x = 0;//placeholder for rearranging screen to show statistics on vcf
+    			for(int x=0;x < 3;x++)
+               {
+                  System.out.println(vcf_records.get(x));
+               }
     		}
     	});
     	//Plot Action Listener
@@ -131,6 +157,7 @@ public class Mockup extends JFrame
             BufferedReader reader = new BufferedReader(new FileReader(file));
             String line = new String();
       		int increment = 0;
+            file_number++;
             while(line != null)
       		   {
                   line = reader.readLine();
@@ -140,6 +167,10 @@ public class Mockup extends JFrame
                            meta = meta + line + '\n';
                            System.out.println("THERE IS META" + meta);
                         }
+                     else
+                        {
+                           vcf_records.add(line);
+                        }
                       }
                   catch(StringIndexOutOfBoundsException ex)
                      {
@@ -147,6 +178,11 @@ public class Mockup extends JFrame
                      }
                   System.out.println(line);
                }
+               Entries.addElement("VCF Entry: " + String.valueOf(file_number));
+               EntryDock.setModel(Entries);
+               meta_list.add(meta);
+               record_list.add(vcf_records);
+               
             reader.close();
             }
          catch(FileNotFoundException ex)
@@ -156,6 +192,62 @@ public class Mockup extends JFrame
          catch(IOException ex)
          {
             System.out.println("ERROR: IOException");
+         }
+    }
+    
+    public class read_worker extends Thread
+      {
+         private final int threadId;
+         public read_worker(int threadId)
+            {
+               this.threadId = threadId;   
+            }
+         @Override
+         public void run()
+         {
+            int returnVal = fileChooser.showOpenDialog(Mockup.this);
+            if (returnVal == JFileChooser.APPROVE_OPTION) 
+               {
+                  File file = fileChooser.getSelectedFile();
+                  vcf_read(file);
+               }
+         }
+      }
+    public class meta_worker extends Thread
+    {
+      private final int threadId;
+      public meta_worker(int threadId)
+         {
+            this.threadId = threadId;   
+         }
+      @Override
+      public void run()
+      {
+         new MetaViewer("Meta Information",meta);
+      }
+    }
+    public class MetaViewer extends JFrame
+    {
+      private JTextArea display = new JTextArea(40, 58);
+      private JScrollPane results = new JScrollPane(display);
+      public MetaViewer(String title,String Meta)
+         {
+           super(title);
+           setSize(1000,800);
+           setLocationRelativeTo(null);
+           getContentPane().setLayout(new BorderLayout());
+           getContentPane().add(getMetaPanel(Meta),BorderLayout.CENTER);
+           setVisible(true);
+           setDefaultCloseOperation(MetaViewer.DISPOSE_ON_CLOSE);
+         }
+      private JPanel getMetaPanel(String Meta)
+         {
+            JPanel panel = new JPanel();
+            display.setEditable(false);
+            results.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+            panel.add(results);
+            display.setText(Meta);
+            return panel;
          }
     }
         
